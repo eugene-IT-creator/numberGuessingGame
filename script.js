@@ -23,6 +23,28 @@ const getPlayerGuess = () => {
 }
 
 const checkGuess = (secretNumber, playerGuess) => {
-    return secretNumber = playerGuess ? 'Correct! You win' : secretNumber > playerGuess ? 'Your guess is too low' : 'Your guess is too high';
+    return secretNumber == playerGuess ? 'Correct! You win' : secretNumber > playerGuess ? 'Your guess is too low' : 'Your guess is too high';
+}
+
+const game = () => {
+    let attempts = 0;
+    let wonGame = false;
+    let cancelledGame = false;
+    const secretNumber = generateRandomNumber();
+    //let guessedNumbers = [];
+
+    alert("Welcome to the evil AI number guessing game. I hope you will lose this game and not defeat me. I have selected a number which I know you can never guess! haha!");
+
+    do {
+        attempts++;
+        const guess = getPlayerGuess();
+        guess == null && (cancelledGame = true);
+        console.log(secretNumber);
+        const result = checkGuess(secretNumber, guess);
+        console.log(result);
+        result == 'Correct! You win' && (wonGame = true);
+        wonGame ? alert(`${result} with a score of ${10 - attempts + 1}`) : alert(`${result}, ${10 - attempts} attempts remaining`);
+
+    } while (!wonGame && attempts < 10 && !cancelledGame);
 }
 
