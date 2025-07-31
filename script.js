@@ -21,3 +21,8 @@ const getPlayerGuess = () => {
 
     return guess;
 }
+
+const checkGuess = (secretNumber, playerGuess) => {
+    return secretNumber = playerGuess ? 'Correct! You win' : secretNumber > playerGuess ? 'Your guess is too low' : 'Your guess is too high';
+}
+
