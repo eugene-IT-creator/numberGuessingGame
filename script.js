@@ -47,12 +47,12 @@ const game = () => {
             wonGame = true;
         }
         console.log(result);
-        wonGame ? alert(`${result} with a score of ${10 - attempts + 1}`) : alert(`${result}, ${10 - attempts} attempts remaining`);
+        wonGame ? alert(`${result} with a score of ${11 - attempts}`) : alert(`${result}, ${10 - attempts} attempts remaining`);
 
     } while (!wonGame && attempts < 10);
 
     if (wonGame) {
-        message = `Congratulations, you have won the game and guessed the correct number in ${attempts} attempts`;
+        message = `NOOOO!! Impossible, you have won the game and guessed the correct number in ${attempts} attempts`;
     } else if (cancelledGame) {
         message = "You have cancelled the game, and given up against the Evil AI hahaha! Don't even try again"
     } else {
@@ -61,4 +61,10 @@ const game = () => {
 
     return message;
 }
+
+(() => {
+    console.log("Welcome to the evil AI number guessing game... you will surely never defeat me. BUT if you want to try you can type 'game()' to sart the game now!")
+})();
+
+
 
