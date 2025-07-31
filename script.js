@@ -43,13 +43,21 @@ const game = () => {
         }
         console.log(`Attempt: ${attempts} (${10 - attempts} remaining)`);
         const result = checkGuess(secretNumber, guess);
+        if (result == 'Correct! You win') {
+            wonGame = true;
+        }
         console.log(result);
-        result == 'Correct! You win' && (wonGame = true);
         wonGame ? alert(`${result} with a score of ${10 - attempts + 1}`) : alert(`${result}, ${10 - attempts} attempts remaining`);
 
     } while (!wonGame && attempts < 10);
 
-    wonGame ? message = `Congratulations, you have won the game and guessed the correct number in ${attempts} attempts` : cancelledGame ? message = "You have cancelled the game, and given up against the Evil AI hahaha! Don't even try again" : message = `You lose! Hahahaha, Evil AI rules the world of secret numbers! The correct number was ${secretNumber}`;
+    if (wonGame) {
+        message = `Congratulations, you have won the game and guessed the correct number in ${attempts} attempts`;
+    } else if (cancelledGame) {
+        message = "You have cancelled the game, and given up against the Evil AI hahaha! Don't even try again"
+    } else {
+        `You lose! Hahahaha, Evil AI rules the world of secret numbers! The correct number was ${secretNumber}`;
+    }
 
     return message;
 }
