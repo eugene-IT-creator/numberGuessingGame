@@ -1,3 +1,7 @@
+(() => {
+    console.log("Welcome to the evil AI number guessing game... you will surely never defeat me. BUT if you want to try you can type 'game()' to sart the game now!")
+})();
+
 const generateRandomNumber = () => {
     return Math.floor(Math.random() * 100) + 1;
 }
@@ -32,7 +36,7 @@ const game = () => {
     let message;
     const secretNumber = generateRandomNumber();
     
-    alert("Welcome to the evil AI number guessing game. I hope you will lose this game and not defeat me. I have selected a number which I know you can never guess! haha!");
+    alert("Welcome to the evil AI number guessing game. I have selected a number which I know you can never guess! haha!");
 
     do {
         attempts++;
@@ -48,7 +52,6 @@ const game = () => {
         }
         console.log(result);
         wonGame ? alert(`${result} with a score of ${11 - attempts}`) : alert(`${result}, ${10 - attempts} attempts remaining`);
-
     } while (!wonGame && attempts < 10);
 
     if (wonGame) {
@@ -61,10 +64,5 @@ const game = () => {
 
     return message;
 }
-
-(() => {
-    console.log("Welcome to the evil AI number guessing game... you will surely never defeat me. BUT if you want to try you can type 'game()' to sart the game now!")
-})();
-
 
 
