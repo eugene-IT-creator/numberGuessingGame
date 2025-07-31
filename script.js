@@ -7,11 +7,10 @@ const getPlayerGuess = () => {
     let isValidInput = false;
 
     while (!isValidInput) {
-        guess = Number(prompt("Please enter a number between 1 and 100:"));
+        guess = prompt("Please enter a number between 1 and 100:");
         if (guess == null) {
             return null;
-        }
-        if (!isNaN(guess) && !(guess > 100) && !(guess < 1)) {
+        }else if (!isNaN(guess) && !(guess > 100) && !(guess < 1)) {
             isValidInput = true;
             break;
         } else {
@@ -19,7 +18,7 @@ const getPlayerGuess = () => {
         }
     }
 
-    return guess;
+    return parseInt(guess);
 }
 
 const checkGuess = (secretNumber, playerGuess) => {
@@ -30,21 +29,28 @@ const game = () => {
     let attempts = 0;
     let wonGame = false;
     let cancelledGame = false;
+    let message;
     const secretNumber = generateRandomNumber();
-    //let guessedNumbers = [];
-
+    
     alert("Welcome to the evil AI number guessing game. I hope you will lose this game and not defeat me. I have selected a number which I know you can never guess! haha!");
 
     do {
         attempts++;
         const guess = getPlayerGuess();
-        guess == null && (cancelledGame = true);
-        console.log(secretNumber);
+        if (guess == null) {
+            cancelledGame = true;
+            break;
+        }
+        console.log(`Attempt: ${attempts} (${10 - attempts} remaining)`);
         const result = checkGuess(secretNumber, guess);
         console.log(result);
         result == 'Correct! You win' && (wonGame = true);
         wonGame ? alert(`${result} with a score of ${10 - attempts + 1}`) : alert(`${result}, ${10 - attempts} attempts remaining`);
 
-    } while (!wonGame && attempts < 10 && !cancelledGame);
+    } while (!wonGame && attempts < 10);
+
+    wonGame ? message = `Congratulations, you have won the game and guessed the correct number in ${attempts} attempts` : cancelledGame ? message = "You have cancelled the game, and given up against the Evil AI hahaha! Don't even try again" : message = `You lose! Hahahaha, Evil AI rules the world of secret numbers! The correct number was ${secretNumber}`;
+
+    return message;
 }
 
