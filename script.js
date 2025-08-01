@@ -1,5 +1,5 @@
 (() => {
-    console.log("Welcome to the evil AI number guessing game... you will surely never defeat me. BUT if you want to try you can type 'game()' to start the game now!")
+    console.log("Welcome to the evil AI number guessing game... you will surely never defeat me. BUT if you want to try you can type 'game()' to start the game now!");
 })();
 
 const generateRandomNumber = () => {
@@ -23,7 +23,6 @@ const getPlayerGuess = () => {
             alert("Invalid Input. What grade did you get in maths?? Do you know what an integer is or not?");
         }
     }
-
     return parseInt(guess);
 }
 
@@ -59,7 +58,7 @@ const game = () => {
     if (wonGame) {
         message = `NOOOO!! Impossible, you have won the game and guessed the correct number in ${attempts} attempts`;
     } else if (cancelledGame) {
-        message = "You have cancelled the game, and given up against the Evil AI hahaha! Don't even try again"
+        message = "You have cancelled the game, and given up against the Evil AI hahaha! Don't even try again";
     } else {
         message = `You lose! Hahahaha, Evil AI rules the world of secret numbers! The correct number was ${secretNumber}`;
     }
