@@ -59,7 +59,7 @@ const game = () => {
     } else if (cancelledGame) {
         message = "You have cancelled the game, and given up against the Evil AI hahaha! Don't even try again"
     } else {
-        `You lose! Hahahaha, Evil AI rules the world of secret numbers! The correct number was ${secretNumber}`;
+        message = `You lose! Hahahaha, Evil AI rules the world of secret numbers! The correct number was ${secretNumber}`;
     }
 
     return message;
