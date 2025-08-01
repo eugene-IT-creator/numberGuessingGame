@@ -1,1 +1,1 @@
-Link: https://eugene-it-creator.github.io/numberGuessingGame/index.html
+Link: https://eugene-it-creator.github.io/numberGuessingGame/
