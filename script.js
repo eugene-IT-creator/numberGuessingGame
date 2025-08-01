@@ -26,7 +26,7 @@ const getPlayerGuess = () => {
 }
 
 const checkGuess = (secretNumber, playerGuess) => {
-    return secretNumber == playerGuess ? 'Correct! You win' : secretNumber > playerGuess ? 'Your guess is too low' : 'Your guess is too high';
+    return secretNumber == playerGuess ? "Correct! You win" : secretNumber > playerGuess ? "Your guess is too low" : "Your guess is too high";
 }
 
 const game = () => {
@@ -47,7 +47,7 @@ const game = () => {
         }
         console.log(`Attempt: ${attempts} (${10 - attempts} remaining)`);
         const result = checkGuess(secretNumber, guess);
-        if (result == 'Correct! You win') {
+        if (result == "Correct! You win") {
             wonGame = true;
         }
         console.log(result);
