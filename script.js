@@ -1,5 +1,5 @@
 (() => {
-    console.log("Welcome to the evil AI number guessing game... you will surely never defeat me. BUT if you want to try you can type 'game()' to sart the game now!")
+    console.log("Welcome to the evil AI number guessing game... you will surely never defeat me. BUT if you want to try you can type 'game()' to start the game now!")
 })();
 
 const generateRandomNumber = () => {
