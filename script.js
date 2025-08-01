@@ -17,8 +17,10 @@ const getPlayerGuess = () => {
         }else if (!isNaN(guess) && !(guess > 100) && !(guess < 1)) {
             isValidInput = true;
             break;
+        } else if (guess === "") {
+            alert("Don't be shy. Give me something!");
         } else {
-            alert("Invalid Input");
+            alert("Invalid Input. What grade did you get in maths?? Do you know what an integer is or not?");
         }
     }
 
